@@ -1,0 +1,7 @@
+*.ipynb_checkpoints
+*.DS_Store
+*.idea
+*.cpython*
+
+student-debt/rpi.*
+student-debt/RPISeries.ipynb
