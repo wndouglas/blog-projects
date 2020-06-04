@@ -4,5 +4,5 @@
 *.cpython*
 
 student-debt/rpi.*
-Student-debt/*.ipynb
+student-debt/*.ipynb
 student-debt/debtRateCalculator.py
