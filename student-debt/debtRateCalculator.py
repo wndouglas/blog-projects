@@ -37,13 +37,13 @@ class DebtRateCalculator:
     def __init__(self,
                  initial_yearly_salary,
                  initial_debt=40000,
-                 yearly_raise_rate=0.05,
+                 yearly_raise_rate=0.036,
                  interest_yearly_salary_floor=26575,
                  interest_yearly_salary_ceiling=47835,
                  max_adjustable_rate=0.03,
                  inflation_linked_rate=0.03,
                  repayment_yearly_salary_floor=26575,
-                 compounding_period=365,
+                 compounding_period=360,
                  ):
         """ Set-up all the problem parameters"""
         self.initial_monthly_salary = initial_yearly_salary/compounding_period
@@ -121,6 +121,7 @@ class DebtRateCalculator:
 
         R = self.__calculate_effective_rate()
         N = self.current_month
+        total_spent = self.current_total_paid
 
         # Finally we reset all member variables to their initial states
         self.current_debt = self.initial_debt
@@ -128,5 +129,5 @@ class DebtRateCalculator:
         self.current_month = 0
         self.current_total_paid = 0
 
-        return R, N
+        return R, N, total_spent
 
